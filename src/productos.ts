@@ -200,7 +200,7 @@ const productos: ProductosPorCategoria = {
         "Topping de Tartaro Nikkei de atún",
         "Bañado en Salsa de Masago",
       ],
-      url_image: "public/images/sushi_frio_saku_especial_roll.png",
+      url_image: "images/sushi_frio_saku_especial_roll.png",
       disponible: true,
     },
     {
@@ -214,7 +214,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en salsa de masago",
         "Coronado con sesamo",
       ],
-      url_image: "public/images/sushi_frio_dinamita_roll.png",
+      url_image: "images/sushi_frio_dinamita_roll.png",
       disponible: true,
     },
     {
@@ -227,7 +227,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en Salsa de Masago y Salsa Teriyaki",
         "Coronado con Kanikama Crunsh",
       ],
-      url_image: "public/images/sushi_tempura_yaki_roll.png",
+      url_image: "images/sushi_tempura_yaki_roll.png",
       disponible: true,
     },
     {
@@ -241,7 +241,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en Salsa Acevichada",
         "Coronado con Togarashi y cancha",
       ],
-      url_image: "public/images/sushi_frio_acevichado_roll.png",
+      url_image: "images/sushi_frio_acevichado_roll.png",
       disponible: true,
     },
     {
@@ -255,7 +255,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en Salsa de Rocoto",
         "Coronado con Togarashi",
       ],
-      url_image: "public/images/sushi_frio_spicy_roll.png",
+      url_image: "images/sushi_frio_spicy_roll.png",
       disponible: true,
     },
     {
@@ -269,7 +269,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en Salsa Teriyaki",
         "Coronado con ciboulette.",
       ],
-      url_image: "public/images/sushi_frio_platano_roll.png",
+      url_image: "images/sushi_frio_platano_roll.png",
       disponible: true,
     },
     {
@@ -282,7 +282,7 @@ const productos: ProductosPorCategoria = {
         "Bañado con Salsa Teriyaki",
         "Coronado con masago",
       ],
-      url_image: "public/images/sushi_tempura_tokio_roll.png",
+      url_image: "images/sushi_tempura_tokio_roll.png",
       disponible: true,
     },
     {
@@ -296,7 +296,7 @@ const productos: ProductosPorCategoria = {
         "Coronado con Kanikama Crunsh",
         "Salsa de Leche de Tigre de Maracuyá en la base del plato",
       ],
-      url_image: "public/images/sushi_frio_tropical_roll.png",
+      url_image: "images/sushi_frio_tropical_roll.png",
       disponible: true,
     },
     {
@@ -310,7 +310,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en Salsa Fugi",
         "Coronado con ciboulette.",
       ],
-      url_image: "public/images/sushi_frio_fugi_roll.png",
+      url_image: "images/sushi_frio_fugi_roll.png",
       disponible: true,
     },
     {
@@ -323,7 +323,7 @@ const productos: ProductosPorCategoria = {
         "Bañado en salsa de masago y Salsa Angila",
         "Coronado con sesamo",
       ],
-      url_image: "public/images/sushi_tempura_dako_roll.png",
+      url_image: "images/sushi_tempura_dako_roll.png",
       disponible: true,
     },
     {
@@ -336,7 +336,7 @@ const productos: ProductosPorCategoria = {
         "Salsa acevichada",
         "Coronado con masago.",
       ],
-      url_image: "public/images/sushi_frio_super_ligth_roll.png",
+      url_image: "images/sushi_frio_super_ligth_roll.png",
       disponible: true,
     },
   ],

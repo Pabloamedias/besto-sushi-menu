@@ -12,11 +12,7 @@ const ProductoCard = ({ producto }: Props) => {
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img
-        src={
-          producto.url_image
-            ? producto.url_image
-            : "public/images/logo_blanco.png"
-        }
+        src={producto.url_image ? producto.url_image : "images/logo_blanco.png"}
         className="card-img-top"
       />
       <div className="card-body" style={{ backgroundColor: "black" }}>

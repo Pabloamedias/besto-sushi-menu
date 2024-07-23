@@ -14,7 +14,7 @@ const NavbarNew = () => {
           <div className="container d-flex flex-column flex-lg-row align-items-center">
             <img
               className="img-fluid "
-              src="public/images/logo_negro_fix.png"
+              src="images/logo_negro_fix.png"
               style={{ maxWidth: "150px" }}
               alt=""
             />
