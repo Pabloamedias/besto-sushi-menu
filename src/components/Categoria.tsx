@@ -4,7 +4,7 @@ import HorizontalCard from "./HorizontalCard";
 import { useCategorias } from "../context/CategoriasContext";
 import { DataProducto } from "../types/interface";
 import { transformarADinero } from "../helpers/trasnformarADinero";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const Categoria = () => {
   const { categorias, loading } = useCategorias();
