@@ -36,7 +36,11 @@ const Header = () => {
         >
           <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
             {loading ? (
-              <h1>Cargando</h1>
+              <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+              </ul>
             ) : (
               Object.keys(categorias!).map((key) => (
                 <li
