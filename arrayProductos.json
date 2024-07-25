@@ -1,5 +1,5 @@
 {
-  "Entradas y picoteos": [
+  "1entradas-y-picoteos": [
     {
       "nombre": "Ceviche Tradicional",
       "precioNormal": "4990",
@@ -45,7 +45,7 @@
       "disponible": true
     }
   ],
-  "Promociones": [
+  "2promociones": [
     {
       "nombre": "20 piezas",
       "subCategoria": "Fríos",
@@ -184,7 +184,7 @@
       "disponible": true
     }
   ],
-  "Sakura rolls especiales": [
+  "3sakura-rolls-especiales": [
     {
       "nombre": "Saku especial roll (Uramaki)",
       "precioNormal": "8990",
@@ -335,7 +335,7 @@
       "disponible": true
     }
   ],
-  "SushiBurger": [
+  "4sushiBurger": [
     {
       "nombre": "Hamburguesa Sake",
       "precioNormal": "9990",
@@ -407,7 +407,7 @@
       "disponible": true
     }
   ],
-  "Handrolls": [
+  "5handrolls": [
     {
       "nombre": "Hand rolls Vegetariano",
       "precioNormal": "3490",
@@ -437,7 +437,7 @@
       "disponible": true
     }
   ],
-  "Gohan": [
+  "6gohan": [
     {
       "nombre": "Gohan de Salmon",
       "precioNormal": "7990",
