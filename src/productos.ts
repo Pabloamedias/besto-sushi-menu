@@ -7,7 +7,7 @@ const productos: ProductosPorCategoria = {
   "Entradas-y-picoteos": [
     {
       nombre: "Ceviche Tradicional",
-      precioNormal: "4990",
+      precioNormal: "7490",
       precioOferta: null,
       descripcion: [
         "Pescado blanca, leche de tigre tradicional, cebolla morada",
