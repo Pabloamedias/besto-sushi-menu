@@ -7,3 +7,7 @@ export interface DataProducto {
   disponible: boolean;
   url_image?: string;
 }
+
+export interface ProductosPorCategoria {
+  [categoria: string]: DataProducto[];
+}

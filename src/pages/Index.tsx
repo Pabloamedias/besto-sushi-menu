@@ -1,5 +1,4 @@
 import Categoria from "../components/Categoria";
-
 const Index = () => {
   return (
     <div>
