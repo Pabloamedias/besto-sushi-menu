@@ -418,6 +418,7 @@ const productos: ProductosPorCategoria = {
       precioOferta: null,
       descripcion: null,
       disponible: true,
+      url_image: "images/handroll_pollo.png",
     },
     {
       nombre: "Hand rolls Camaron",
