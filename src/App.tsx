@@ -7,7 +7,6 @@ function App() {
     <Routes>
       <Route path="/" element={<PublicLayout />}>
         <Route index element={<Index />} />
-        {/* Añade rutas adicionales si es necesario */}
       </Route>
     </Routes>
   );

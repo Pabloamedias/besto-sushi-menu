@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import productos from "../productos";
 import { formatHelper } from "../helpers/formatName";
+import { useCategorias } from "../context/CategoriasContext";
 
 const Header = () => {
   const [hash, setHash] = useState("");
@@ -23,6 +23,7 @@ const Header = () => {
     };
   }, []);
 
+  const { categorias, loading } = useCategorias();
   return (
     <div className="border-top" style={{ background: "black" }}>
       <div
@@ -34,20 +35,28 @@ const Header = () => {
           style={{ whiteSpace: "nowrap", width: "100%" }}
         >
           <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
-            {Object.keys(productos).map((key) => (
-              <li
-                className={`m-1 mx-3 ${hash === key ? "active" : ""}`}
-                key={key}
-              >
-                <a
-                  className={"text-decoration-none"}
-                  href={`#${key}`}
-                  style={{ color: hash === key ? "red" : "white" }}
+            {loading ? (
+              <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+                <li className="m-1 mx-3 text-white">Cargando...</li>
+              </ul>
+            ) : (
+              Object.keys(categorias!).map((key) => (
+                <li
+                  className={`m-1 mx-3 ${hash === key ? "active" : ""}`}
+                  key={key}
                 >
-                  {formatHelper(key)}
-                </a>
-              </li>
-            ))}
+                  <a
+                    className={"text-decoration-none"}
+                    href={`#${key}`}
+                    style={{ color: hash === key ? "red" : "white" }}
+                  >
+                    {formatHelper(key)}
+                  </a>
+                </li>
+              ))
+            )}
           </ul>
         </div>
       </div>

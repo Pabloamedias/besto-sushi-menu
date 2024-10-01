@@ -1,12 +1,9 @@
 import { DataProducto } from "../types/interface";
+import { transformarADinero } from "../helpers/trasnformarADinero";
 
 interface Props {
   producto: DataProducto;
 }
-
-const transformarADinero = (valor: string) => {
-  return `Valor: $${Number(valor).toLocaleString()}`;
-};
 
 const ProductoCard = ({ producto }: Props) => {
   return (
@@ -25,7 +22,7 @@ const ProductoCard = ({ producto }: Props) => {
         <ul>
           {producto.descripcion?.map((descripcion, index) => (
             <li
-              key={index} // Añadimos un índice como clave
+              key={index}
               className="list-unstyled fst-italic"
               style={{ color: "white" }}
             >
