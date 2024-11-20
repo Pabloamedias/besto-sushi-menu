@@ -1,13 +1,21 @@
-export interface DataProducto {
+export interface Categoria {
+  id: number;
   nombre: string;
-  subCategoria?: string;
-  precioNormal: string;
-  precioOferta: null;
-  descripcion: string[] | null;
+  productos: Producto[];
   disponible: boolean;
-  url_image?: string;
 }
 
-export interface ProductosPorCategoria {
-  [categoria: string]: DataProducto[];
+export interface Producto {
+  nombre: string;
+  valor: number;
+  valorOferta: number;
+  urlImagen: string;
+  descripcion: string;
+  disponible: boolean;
+}
+
+export interface DatosLocal {
+  telefono: string;
+  ubicacion: string;
+  rrss: string;
 }

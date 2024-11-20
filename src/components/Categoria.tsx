@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { formatHelper } from "../helpers/formatName";
 import HorizontalCard from "./HorizontalCard";
 import { useCategorias } from "../context/CategoriasContext";
-import { DataProducto } from "../types/interface";
+import { Producto } from "../types/interface";
 import { transformarADinero } from "../helpers/trasnformarADinero";
 import { Modal } from "react-bootstrap";
+import { formatHelper } from "../helpers/formatName";
 
 const Categoria = () => {
   const { categorias, loading } = useCategorias();
-  const [selectedProducto, setSelectedProducto] = useState<DataProducto | null>(
+  const [selectedProducto, setSelectedProducto] = useState<Producto | null>(
     null
   );
   const [show, setShow] = useState(false);
 
-  const handleShowModal = (producto: DataProducto) => {
+  const handleShowModal = (producto: Producto) => {
     setSelectedProducto(producto);
     setShow(true);
   };
@@ -25,8 +25,12 @@ const Categoria = () => {
       {loading ? (
         <h1 className="text-white">Cargando Menú...</h1>
       ) : (
-        Object.keys(categorias!).map((categoria) => (
-          <div id={categoria} key={categoria} className="m-3">
+        categorias!.map((categoria) => (
+          <div
+            id={formatHelper(categoria.nombre)}
+            key={categoria.id}
+            className="m-3"
+          >
             <div
               className="m-2 mb-3 rounded"
               style={{
@@ -35,7 +39,7 @@ const Categoria = () => {
               }}
             >
               <h1 className="m-1 p-2 fw-bold" style={{ color: "white" }}>
-                {formatHelper(categoria)}
+                {categoria.nombre}
               </h1>
             </div>
 
@@ -43,7 +47,7 @@ const Categoria = () => {
               {loading ? (
                 <h1>Cargando</h1>
               ) : (
-                categorias![categoria].map((producto, index) =>
+                categoria.productos.map((producto, index) =>
                   producto.disponible ? (
                     <div key={index} className="col mb-4">
                       <HorizontalCard
@@ -69,13 +73,9 @@ const Categoria = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body style={{ background: "black", color: "white" }}>
-            <ul>
-              {selectedProducto.descripcion?.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
+            <p>{selectedProducto.descripcion}</p>
             <p className="fw-bold">
-              {transformarADinero(selectedProducto.precioNormal)}
+              {transformarADinero(selectedProducto.valor)}
             </p>
           </Modal.Body>
         </Modal>

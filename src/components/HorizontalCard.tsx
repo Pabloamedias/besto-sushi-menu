@@ -1,9 +1,9 @@
 import { transformarADinero } from "../helpers/trasnformarADinero";
-import { DataProducto } from "../types/interface";
+import { Producto } from "../types/interface";
 
 interface Props {
-  producto: DataProducto;
-  onShowModal: (producto: DataProducto) => void;
+  producto: Producto;
+  onShowModal: (producto: Producto) => void;
 }
 
 const HorizontalCard = ({ producto, onShowModal }: Props) => {
@@ -14,11 +14,15 @@ const HorizontalCard = ({ producto, onShowModal }: Props) => {
           <div className="col-4 col-sm-4 col-md-4">
             <img
               src={
-                producto.url_image
-                  ? producto.url_image
+                producto.urlImagen
+                  ? producto.urlImagen
                   : "images/logo_blanco.png"
               }
               className="img-fluid rounded-start"
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src = "images/logo_blanco.png";
+              }}
             />
           </div>
           <div
@@ -31,7 +35,7 @@ const HorizontalCard = ({ producto, onShowModal }: Props) => {
               </h6>
               <div className="d-flex align-items-center gap-2 mt-2">
                 <p className="card-text fw-bold" style={{ color: "white" }}>
-                  {transformarADinero(producto.precioNormal)}
+                  {transformarADinero(producto.valor)}
                 </p>
 
                 <button

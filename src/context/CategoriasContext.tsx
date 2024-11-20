@@ -6,10 +6,10 @@ import {
   ReactNode,
 } from "react";
 import { readData } from "../config/firebase";
-import { ProductosPorCategoria } from "../types/interface";
+import { Categoria } from "../types/interface";
 
 interface CategoriasContextProps {
-  categorias: ProductosPorCategoria | null;
+  categorias: Categoria[] | null;
   loading: boolean;
   error: Error | null;
 }
@@ -23,9 +23,7 @@ const CategoriasContext = createContext<CategoriasContextProps | undefined>(
 );
 
 export const CategoriasProvider = ({ children }: CategoriasProviderProps) => {
-  const [categorias, setCategorias] = useState<ProductosPorCategoria | null>(
-    null
-  );
+  const [categorias, setCategorias] = useState<Categoria[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -33,7 +31,7 @@ export const CategoriasProvider = ({ children }: CategoriasProviderProps) => {
     console.log("fetchCategorias");
     const fetchCategorias = async () => {
       try {
-        const data = (await readData("/")) as ProductosPorCategoria;
+        const data = await readData("/categorias");
         setCategorias(data);
       } catch (err) {
         setError(err as Error);
