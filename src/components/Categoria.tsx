@@ -31,14 +31,14 @@ const Categoria = () => {
             key={categoria.id}
             className="m-3"
           >
-            <div
-              className="m-2 mb-3 rounded"
-              style={{
-                backgroundColor: "black",
-                display: "inline-flex",
-              }}
-            >
-              <h1 className="m-1 p-2 fw-bold" style={{ color: "white" }}>
+            <div>
+              <h1
+                className="m-1 p-4 fw-bold"
+                style={{
+                  color: "var(--brand-orange)",
+                  textDecoration: "underline",
+                }}
+              >
                 {categoria.nombre}
               </h1>
             </div>
@@ -67,12 +67,25 @@ const Categoria = () => {
 
       {selectedProducto && (
         <Modal show={show} onHide={handleClose} centered>
-          <Modal.Header closeButton style={{ background: "black" }}>
-            <Modal.Title style={{ color: "pink" }}>
+          <Modal.Header
+            closeButton
+            style={{
+              background: "var(--brand-pastel)",
+              borderBottom: "2px solid var(--brand-orange)",
+            }}
+          >
+            <Modal.Title
+              style={{ color: "var(--brand-orange)", fontWeight: "700" }}
+            >
               {selectedProducto.nombre}
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{ background: "black", color: "white" }}>
+          <Modal.Body
+            style={{
+              background: "var(--brand-pastel)",
+              color: "var(--brand-blue",
+            }}
+          >
             <p>{selectedProducto.descripcion}</p>
             <p className="fw-bold">
               {transformarADinero(selectedProducto.valor)}

@@ -8,7 +8,7 @@ const PublicLayout = () => {
     <div
       className="d-flex flex-column min-vh-100"
       style={{
-        background: `url(${backgroundImage}) repeat`,
+        background: `var(--brand-pastel)`,
       }}
     >
       <NavbarNew />

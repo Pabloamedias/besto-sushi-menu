@@ -10,13 +10,13 @@ const NavbarNew = () => {
       <nav
         className="navbar navbar-expand-lg"
         data-bs-theme="dark"
-        style={{ backgroundColor: "black" }}
+        style={{ backgroundColor: "var(--brand-pastel)" }}
       >
         <div className="container-fluid">
           <div className="container d-flex flex-column flex-lg-row align-items-center">
             <img
               className="img-fluid "
-              src="images/logo_negro_fix.png"
+              src="images/logo-blanco.png"
               style={{ maxWidth: "150px" }}
               alt=""
             />

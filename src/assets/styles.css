@@ -1,3 +1,13 @@
-.background-pink {
-  background: pink;
+:root {
+  --brand-blue: #191384;
+  --brand-orange: #fb7c04;
+  --brand-pastel: #fbfbdb;
+}
+
+.nav-link {
+  color: var(--brand-orange);
+  font-weight: 700;
+}
+.nav-link:hover {
+  color: var(--brand-blue);
 }

@@ -26,7 +26,7 @@ const Header = () => {
 
   const { categorias, loading } = useCategorias();
   return (
-    <div className="border-top" style={{ background: "black" }}>
+    <div className="border-top" style={{ background: "var(--brand-blue)" }}>
       <div
         className="d-flex align-items-center overflow-hidden"
         style={{ width: "100%", position: "relative" }}
@@ -35,9 +35,15 @@ const Header = () => {
           className="overflow-auto"
           style={{ whiteSpace: "nowrap", width: "100%" }}
         >
-          <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
+          <ul
+            className="list-unstyled d-flex py-1"
+            style={{ display: "flex", margin: 0 }}
+          >
             {loading ? (
-              <ul className="list-unstyled d-flex" style={{ display: "flex" }}>
+              <ul
+                className="list-unstyled d-flex py-1"
+                style={{ display: "flex", margin: 0 }}
+              >
                 <li className="m-1 mx-3 text-white">Cargando...</li>
                 <li className="m-1 mx-3 text-white">Cargando...</li>
                 <li className="m-1 mx-3 text-white">Cargando...</li>
@@ -51,8 +57,8 @@ const Header = () => {
                     style={{
                       color:
                         selectedCategoria === formatHelper(categoria.nombre)
-                          ? "red"
-                          : "white",
+                          ? "var(--brand-orange)"
+                          : "var(--brand-pastel)",
                       cursor: "pointer",
                     }}
                   >
