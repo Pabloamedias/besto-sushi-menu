@@ -1,3 +1,3 @@
-export const transformarADinero = (valor: string) => {
-  return `Valor: $${Number(valor).toLocaleString()}`;
+export const transformarADinero = (valor: number) => {
+  return `Valor: $${valor.toLocaleString()}`;
 };
