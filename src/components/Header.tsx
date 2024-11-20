@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatHelper } from "../helpers/formatName";
 import { useCategorias } from "../context/CategoriasContext";
 
 const Header = () => {
-  const [hash, setHash] = useState("");
+  function goCategoria(id: string) {
+    const elemento = document.getElementById(id);
+    if (elemento) {
+      setSelectedCategoria(id);
+      // Forzar un pequeño margen temporal
+      elemento.style.scrollMarginTop = "1px";
 
-  useEffect(() => {
-    // Función para actualizar el hash
-    const handleHashChange = () => {
-      setHash(window.location.hash.slice(1)); // Elimina el símbolo '#'
-    };
+      elemento.scrollIntoView({
+        behavior: "smooth", // Desplazamiento suave
+        block: "end", // Alinea al inicio
+      });
 
-    // Añadir el listener para el cambio de hash
-    window.addEventListener("hashchange", handleHashChange);
+      // Opcional: limpiar scrollMarginTop después
+      setTimeout(() => {
+        elemento.style.scrollMarginTop = "";
+      }, 1000); // Ajusta el tiempo según la duración del desplazamiento
+    }
+  }
 
-    // Configuración inicial del hash
-    handleHashChange();
-
-    // Limpiar el listener cuando el componente se desmonte
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
+  const [selectedCategoria, setSelectedCategoria] = useState("");
 
   const { categorias, loading } = useCategorias();
   return (
@@ -42,17 +43,20 @@ const Header = () => {
                 <li className="m-1 mx-3 text-white">Cargando...</li>
               </ul>
             ) : (
-              Object.keys(categorias!).map((key) => (
-                <li
-                  className={`m-1 mx-3 ${hash === key ? "active" : ""}`}
-                  key={key}
-                >
+              categorias!.map((categoria) => (
+                <li className={`m-1 mx-3 `} key={categoria.nombre}>
                   <a
                     className={"text-decoration-none"}
-                    href={`#${key}`}
-                    style={{ color: hash === key ? "red" : "white" }}
+                    onClick={() => goCategoria(formatHelper(categoria.nombre))}
+                    style={{
+                      color:
+                        selectedCategoria === formatHelper(categoria.nombre)
+                          ? "red"
+                          : "white",
+                      cursor: "pointer",
+                    }}
                   >
-                    {formatHelper(key)}
+                    {categoria.nombre}
                   </a>
                 </li>
               ))
