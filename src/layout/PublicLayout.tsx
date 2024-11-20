@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "../assets/styles.css";
 import NavbarNew from "../components/NavbarNew";
-import backgroundImage from "../../public/images/black_thread.png";
 
 const PublicLayout = () => {
   return (
